@@ -28,7 +28,7 @@ public class PostReceiveHook : IHttpHandler {
     }
 
     private void Deploy() {
-        ExecuteCommandSync(string.Format(@"cd '{0}' && git pull --rebase origin master", ConfigurationManager.AppSettings["WebRoot"]));
+        ExecuteCommandSync(string.Format(@"cd {0} && git pull --rebase origin master", ConfigurationManager.AppSettings["WebRoot"]));
     }
     
     /// <summary>
